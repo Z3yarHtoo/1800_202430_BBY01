@@ -1,0 +1,56 @@
+[33mcommit 7866c16714e68e405254631ed3fb6dccfd0c7795[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 89a1be3 a6f7f3b
+Author: Z3yarHtoo <zhtoo@my.bcit.ca>
+Date:   Wed Sep 18 09:34:53 2024 -0700
+
+    confilict on README resolved by Zeyar
+
+[33mcommit 89a1be3f5d507a7e14efe1354d0fc3651c4de4a6[m
+Merge: 27f1de1 b03222b
+Author: Z3yarHtoo <zhtoo@my.bcit.ca>
+Date:   Wed Sep 18 09:32:49 2024 -0700
+
+    Merge branch 'main' of https://github.com/Z3yarHtoo/1800_202430_BBY01
+
+[33mcommit a6f7f3ba9a572f5e7c03e5e04b3bfedb51b380fa[m
+Author: Alex Hidalgo <moses.hidalgo@icloud.com>
+Date:   Wed Sep 18 09:28:04 2024 -0700
+
+    added more detail to README one liner by Alex
+
+[33mcommit 27f1de13cc7cfb75ecfc1a3371bee3658a02416c[m
+Author: Z3yarHtoo <zhtoo@my.bcit.ca>
+Date:   Wed Sep 18 09:25:24 2024 -0700
+
+    added another line to README.md file for Zeyar
+
+[33mcommit b03222b0ccba8b94440eaa88ea94199d46008fe2[m
+Author: Alex Hidalgo <moses.hidalgo@icloud.com>
+Date:   Wed Sep 18 09:22:27 2024 -0700
+
+    Added one line intro to README file for Alex
+
+[33mcommit aad2f20044a2d338b30e97d62d45f86cc06acb2a[m
+Merge: e7e5b3d f4f45e7
+Author: Z3yarHtoo <zhtoo@my.bcit.ca>
+Date:   Wed Sep 18 09:10:41 2024 -0700
+
+    Accidentally merged and overwrote
+
+[33mcommit f4f45e7ddfc5a13aaf7657cc21182339a5b355e0[m
+Author: Alex Hidalgo <moses.hidalgo@icloud.com>
+Date:   Wed Sep 18 08:57:29 2024 -0700
+
+    Added one line intro to README file for Alex
+
+[33mcommit e7e5b3d1437c07dbbf74106cf150b287c01273c4[m
+Author: Z3yarHtoo <zhtoo@my.bcit.ca>
+Date:   Wed Sep 18 08:52:17 2024 -0700
+
+    Added one introduction line to README File for Zeyar
+
+[33mcommit d87a6fed0159104c8f8884f8a4df2d7135e542e4[m
+Author: Z3yarHtoo <zhtoo@my.bcit.ca>
+Date:   Wed Sep 18 08:39:00 2024 -0700
+
+    Initial commit

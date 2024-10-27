@@ -69,3 +69,15 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.rounded-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  /* Centers the circle horizontally */
+}

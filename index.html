@@ -42,15 +42,7 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-    <nav class="navbar navbar-light bg-info">
-        <div class="container-fluid">
-            <a class="navbar-brand">Cuisine Connect</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success btn-info" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+    <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
     <div class="container text-center py-4">
@@ -63,19 +55,14 @@
         <a href="login.html" class="btn btn-outline-success btn-info" role="button">Log in</a>
     </div>
 
-    <footer class="navbar justify-content-evenly bg-info fixed-bottom">
-        <div class="container py-3">
-            <span class="material-icons">favorite</span>
-            <span class="material-icons">home</span>
-            <span class="material-icons">map</span>
-        </div>
-    </footer>
+    <nav id="footerPlaceholder"></nav>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY01.js"></script>
+    <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
     <script>
         logout();       //make sure user is logged out

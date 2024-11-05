@@ -34,24 +34,6 @@
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVsyyQQFrAn1e-7luQ_NYL2q2CxzmbZpw&callback=initMap" async defer></script>
-        <script>
-            // Initialize and add the map
-            function initMap() {
-                // The location to center the map on (can be changed to your preferred location)
-                var location = { lat: 49.2827, lng: -123.1207 };
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 12,
-                    center: location
-                });
-                // Marker example
-                var marker = new google.maps.Marker({
-                    position: location,
-                    map: map
-                });
-            }
-        </script>
-
 </head>
 
 <body>
@@ -63,9 +45,22 @@
     <nav id="navbarPlaceholder"></nav>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Find Restaurants Near You</h1>
-        <div id="map" style="height: 500px; width: 100%;"></div>
+        <h1 class="text-center mb-4">Recommended Dishes</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/drink1.jpg" class="card-img-top" alt="Recommended Food Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Dish name</h5>
+                        <p class="card-text">A short description of the dish.</p>
+                        <a href="#" class="btn btn-primary">Favourite</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for other recommended dishes here -->
+        </div>
     </div>
+
 
     <nav id="footerPlaceholder"></nav>
     <!---------------------------------------------->

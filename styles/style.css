@@ -12,34 +12,35 @@
 */
 
 .bg-info {
-    background-color: #9f9f9f !important;
-    /* Light green for secondary backgrounds */
+  background-color: #9f9f9f !important;
+  /* Light green for secondary backgrounds */
 }
 
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
-    color: #202020;
-    /* Dark green for brand name & nav links for visibility */
+  color: #202020;
+  /* Dark green for brand name & nav links for visibility */
 }
 
 .btn-info {
-    color: #dfdfdf;
-    /* Lightest shade for text on info button for contrast */
-    background-color: #9f9f9f;
-    /* Light green for button background */
-    border-color: #202020;
-    /* Dark green for button border */
+  color: #dfdfdf;
+  /* Lightest shade for text on info button for contrast */
+  background-color: #9f9f9f;
+  /* Light green for button background */
+  border-color: #202020;
+  /* Dark green for button border */
 }
 
 .btn-primary {
-    color: #dfdfdf;
-    /* Lightest shade for text */
-    font-size: 150%;
-    background-color: #202020;
-    /* Dark green for primary button background */
-    border-color: #606060;
-    /* Reddish-brown for border to use as accent */
-    border-width: thick;
+  color: #dfdfdf;
+  /* Lightest shade for text */
+  font-size: 150%;
+  background-color: #202020;
+  /* Dark green for primary button background */
+  border-color: #606060;
+  /* Reddish-brown for border to use as accent */
+  border-width: thick;
 }
+
 .hero-text {
   text-align: center;
   position: absolute;
@@ -48,6 +49,7 @@
   transform: translate(-50%, -50%);
   color: white;
 }
+
 .hero-text button {
   border: none;
   outline: 0;
@@ -58,16 +60,17 @@
   text-align: center;
   cursor: pointer;
 }
+
 .hero-text button:hover {
   background-color: #555;
   color: white;
 }
 
 body {
-    background-color: #dfdfdf;
-    height: 100%;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: #dfdfdf;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .responsive {
@@ -80,4 +83,19 @@ body {
   height: 100px;
   margin: 0 auto;
   /* Centers the circle horizontally */
+}
+
+/* Add CSS styles for the card container with vertical scrolling */
+.card-container {
+  max-height: 350px;
+  /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}
+
+/* Style the individual cards as needed */
+.card {
+  width: 45%;
+  /* Adjust the width as per your design, leaving a little space for margins */
+  margin: 2%;
+  /* Add margin between cards */
 }

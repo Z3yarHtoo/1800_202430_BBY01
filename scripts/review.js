@@ -1,16 +1,16 @@
-var hikeDocID = localStorage.getItem("hikeDocID");    //visible to all functions on this page
+var mealDocID = localStorage.getItem("mealDocID");    //visible to all functions on this page
 
-function getHikeName(id) {
-    db.collection("hikes")
+function getMealName(id) {
+    db.collection("meals")
         .doc(id)
         .get()
-        .then((thisHike) => {
-            var hikeName = thisHike.data().name;
-            document.getElementById("hikeName").innerHTML = hikeName;
+        .then((thisMeal) => {
+            var mealName = thisMeal.data().name;
+            document.getElementById("mealName").innerHTML = mealName;
         });
 }
 
-getHikeName(hikeDocID);
+getMealName(mealDocID);
 
 // Add this JavaScript code to make stars clickable
 
@@ -31,28 +31,24 @@ stars.forEach((star, index) => {
 
 function writeReview() {
     console.log("inside write review");
-    let hikeTitle = document.getElementById("title").value;
-    let hikeLevel = document.getElementById("level").value;
-    let hikeSeason = document.getElementById("season").value;
-    let hikeDescription = document.getElementById("description").value;
-    let hikeFlooded = document.querySelector('input[name="flooded"]:checked').value;
-    let hikeScrambled = document.querySelector('input[name="scrambled"]:checked').value;
+    let mealTitle = document.getElementById("title").value;
+    let mealDescription = document.getElementById("description").value;
 
     // Get the star rating
     // Get all the elements with the class "star" and store them in the 'stars' variable
     const stars = document.querySelectorAll('.star');
-    // Initialize a variable 'hikeRating' to keep track of the rating count
-    let hikeRating = 0;
+    // Initialize a variable 'mealRating' to keep track of the rating count
+    let mealRating = 0;
     // Iterate through each element in the 'stars' NodeList using the forEach method
     stars.forEach((star) => {
         // Check if the text content of the current 'star' element is equal to the string 'star'
         if (star.textContent === 'star') {
-            // If the condition is met, increment the 'hikeRating' by 1
-            hikeRating++;
+            // If the condition is met, increment the 'mealRating' by 1
+            mealRating++;
         }
     });
 
-    console.log(hikeTitle, hikeLevel, hikeSeason, hikeDescription, hikeFlooded, hikeScrambled, hikeRating);
+    console.log(mealTitle, mealDescription, mealRating);
 
     var user = firebase.auth().currentUser;
     if (user) {
@@ -61,15 +57,11 @@ function writeReview() {
 
         // Get the document for the current user.
         db.collection("reviews").add({
-            hikeDocID: hikeDocID,
+            mealDocID: mealDocID,
             userID: userID,
-            title: hikeTitle,
-            level: hikeLevel,
-            season: hikeSeason,
-            description: hikeDescription,
-            flooded: hikeFlooded,
-            scrambled: hikeScrambled,
-            rating: hikeRating, // Include the rating in the review
+            title: mealTitle,
+            description: mealDescription,
+            rating: mealRating, // Include the rating in the review
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
             window.location.href = "thanks.html"; // Redirect to the thanks page

@@ -38,12 +38,23 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.card-text').innerHTML = details;
                 newcard.querySelector('.card-image').src = `./images/${mealCode}.jpg`; //Example: NV01.jpg
-                newcard.querySelector('a').href = "eachMeal.html?docID="+docID;
+                newcard.querySelector('a').href = "eachMeal.html?docID=" + docID;
+                newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
+                newcard.querySelector('i').onclick = () => updateBookmark(docID);
+
 
                 //Optional: give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
                 // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
+
+                currentUser.get().then(userDoc => {
+                    //get the user name
+                    var bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(docID)) {
+                        document.getElementById('save-' + docID).innerText = 'bookmark';
+                    }
+                })
 
                 //attach to gallery, Example: "meals-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
@@ -54,3 +65,35 @@ function displayCardsDynamically(collection) {
 }
 
 displayCardsDynamically("meals");  //input param is the name of the collection
+
+function updateBookmark(mealDocID) {
+    currentUser.get().then(doc => {
+        console.log(doc.data().bookmarks);
+        currentBookmarks = doc.data().bookmarks;
+
+        if (currentBookmarks && currentBookmarks.includes(mealDocID)) {
+            console.log(mealDocID);
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(mealDocID),
+            })
+                .then(function () {
+                    console.log("this bookmark is removed for " + currentUser);
+                    let iconID = "save-" + mealDocID;
+                    document.getElementById(iconID).innerText = "bookmark_border";
+                })
+        } else {
+            currentUser.set({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(mealDocID),
+            },
+                {
+                    merge: true
+                })
+                .then(function () {
+                    console.log("This bookmark is saved for " + currentUser);
+                    let iconID = "save-" + mealDocID;
+                    document.getElementById(iconID).innerText = "bookmark";
+                })
+
+        }
+    })
+}

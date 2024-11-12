@@ -44,22 +44,27 @@
     <!-- Stuff for body goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Your Favorite Dishes</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/drink1.jpg" class="card-img-top" alt="Food Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Dish name</h5>
-                        <p class="card-text">A short description of the dish.</p>
-                        <a href="#" class="btn btn-primary">Unfavourite</a>
-                    </div>
-                </div>
+    <div class="container">
+        <h1>Saved Meals for <span id=name-goes-here></span></h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="mealCardGroup" class="row row-cols-auto">
             </div>
-            <!-- Add more cards for other saved dishes here -->
         </div>
     </div>
+
+    <!-- Templates for general use, not displayed -->
+    <template id="savedCardTemplate">
+        <div class="card py-2 mx-2 bg-light" style="width: 10rem;">
+            <img class="card-image card-img-top" src=" ..." alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-length">placeholder</p>
+                <br>
+                <a class="btn btn-secondary card-href" id="read-more">Read more ...</a>
+            </div>
+        </div>
+    </template>
 
     <nav id="footerPlaceholder"></nav>
     <!---------------------------------------------->
@@ -71,6 +76,7 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/saved.js"></script>
 
 </body>
 

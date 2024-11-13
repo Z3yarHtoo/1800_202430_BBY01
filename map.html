@@ -36,20 +36,31 @@
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVsyyQQFrAn1e-7luQ_NYL2q2CxzmbZpw&callback=initMap" async defer></script>
         <script>
-            // Initialize and add the map
-            function initMap() {
-                // The location to center the map on (can be changed to your preferred location)
-                var location = { lat: 49.2827, lng: -123.1207 };
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 12,
-                    center: location
-                });
-                // Marker example
-                var marker = new google.maps.Marker({
-                    position: location,
-                    map: map
-                });
-            }
+function initMap() {
+    // Get the selected location from localStorage
+    let selectedLocation = JSON.parse(localStorage.getItem('selectedLocation'));
+
+    // Default location if nothing is selected (Vancouver)
+    let location = { lat: 49.2827, lng: -123.1207 };
+
+    // If we have a selected location, use it
+    if (selectedLocation) {
+        location = selectedLocation;
+    }
+
+    // Create the map centered on the selected location
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: location
+    });
+
+    // Add a marker at the selected location
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map
+    });
+}
+
         </script>
 
 </head>

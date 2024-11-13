@@ -46,3 +46,10 @@ function writeMeals() {
     last_updated: firebase.firestore.Timestamp.fromDate(new Date("January 1, 2023"))
   });
 }
+function saveLocationAndRedirect(lat, lng) {
+  // Store the location coordinates in localStorage
+  localStorage.setItem('selectedLocation', JSON.stringify({ lat: lat, lng: lng }));
+
+  // Redirect to map.html
+  window.location.href = "map.html";
+}

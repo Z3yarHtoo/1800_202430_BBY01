@@ -40,10 +40,8 @@ function initMap() {
     // Get the selected location from localStorage
     let selectedLocation = JSON.parse(localStorage.getItem('selectedLocation'));
 
-    // Default location if nothing is selected (Vancouver)
     let location = { lat: 49.2827, lng: -123.1207 };
 
-    // If we have a selected location, use it
     if (selectedLocation) {
         location = selectedLocation;
     }

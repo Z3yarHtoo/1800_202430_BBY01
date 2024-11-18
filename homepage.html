@@ -44,46 +44,41 @@
     <!-- Stuff for body goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Recommended Dishes</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/drink1.jpg" class="card-img-top" alt="Recommended Food Image" 
-                    onclick="saveLocationAndRedirect(49.2827, -123.1207)">               
-                    <div class="card-body">
-                        <h5 class="card-title">Dish name</h5>
-                        <p class="card-text">A short description of the dish.</p>
-                        <a href="#" class="btn btn-primary">Favourite</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more cards for other recommended dishes here -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/drink1.jpg" class="card-img-top" alt="Recommended Food Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Dish name</h5>
-                        <p class="card-text">A short description of the dish.</p>
-                        <a href="#" class="btn btn-primary">Favourite</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="images/drink1.jpg" class="card-img-top" alt="Recommended Food Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Dish name</h5>
-                        <p class="card-text">A short description of the dish.</p>
-                        <a href="#" class="btn btn-primary">Favourite</a>
-                    </div>
-                </div>
+    <div class="container-fluid bg-light text-dark p-5">
+        <div class="container bg-light p-5">
+            <h3>You've logged in!</h3>
+            <h1 class="display-4">Good morning, <span id="name-goes-here">friend</span></h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Some popular meals</h1>
+        <!-- Here is the container for cards  -->
+        <div class="container">
+            <div id="meals-go-here" class="row row-cols-auto">
             </div>
         </div>
     </div>
 
-
     <nav id="footerPlaceholder"></nav>
+
+    <!-- Templates for general use, not displayed -->
+    <template id="mealCardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem">
+            <img class="card-image card-img-top" src=" ..." alt="..." />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <br />
+                <p class="card-text">
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                </p>
+                <i class="material-icons">bookmark_border</i>
+                <a class="btn btn-primary card-href">Read more ...</a>
+            </div>
+        </div>
+    </template>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->

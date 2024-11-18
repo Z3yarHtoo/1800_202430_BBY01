@@ -87,9 +87,10 @@ body {
 
 /* Add CSS styles for the card container with vertical scrolling */
 .card-container {
-  max-height: auto;
+  max-height: 500px;
   /* Adjust the maximum height as needed */
   overflow-y: auto;
+  overflow-x: none;
 }
 
 /* Style the individual cards as needed */

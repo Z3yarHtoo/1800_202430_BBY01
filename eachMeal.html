@@ -44,16 +44,16 @@
     <!-- Stuff for body goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="container">
+    <div class="container pt-5">
         <h1><span id="mealName">this meal</span></h1>
         <div class="position-relative">
             <img class="meal-img responsive" src="" alt="Meal photo">
-            <button class="btn btn-primary position-absolute bottom-0 end-0 m-3"
+            <button class="btn btn-secondary card-href position-absolute bottom-0 end-0 m-3"
                 onclick="saveMealDocumentIDAndRedirect()">Write Review</button>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container pb-5">
         <h2>Reviews:</h2>
         <div id="details-go-here"></div>
         <!-- Here is the container for cards with horizontal scrolling -->
@@ -65,9 +65,8 @@
     </div>
 
     <template id="reviewCardTemplate">
-        <div class="card bg-secondary">
-            <img class="card-img-top">
-            <div class="card-body bg-light">
+        <div class="card">
+            <div class="card-body">
                 <h5 class="title">placeholder</h5>
                 <p class="star-rating"></p>
                 <p class="time">placeholder</p>

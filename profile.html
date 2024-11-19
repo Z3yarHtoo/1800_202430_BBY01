@@ -44,11 +44,57 @@
     <!-- Stuff for body goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="hero-text">
-        <h1 style="font-size:50px">WELCOME TO CUISINE CONNECT, <span id="name-goes-here">NAME</span>!</h1>
-        <p>Get ready to explore the world through food.</p>
-        <button>Explore</button>
+    <div class="container pt-5">
+        <h1>User Profile </h1>
+        <form>
+            <fieldset class="mb-3" id="personalInfoFields" disabled>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>School</label>
+                    <input type="text" id="schoolInput" class="form-control" placeholder="Enter your school">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <span style="width: 10px"></span>
+                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+            </div>
+        </form>
+        <div class="d-flex pb-5">
+            <a class="btn btn-danger" href="./index.html">Logout</a>
+        </div>
     </div>
+
+    <div class="container">
+        <h1>Saved Meals for <span id=name-goes-here></span></h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="mealCardGroup" class="row row-cols-auto">
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Templates for general use, not displayed -->
+    <template id="savedCardTemplate">
+        <div class="card py-2 mx-2 bg-light" style="width: 10rem;">
+            <img class="card-image card-img-top" src=" ..." alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-length">placeholder</p>
+                <br>
+                <a class="btn btn-secondary card-href" id="read-more">Read more</a>
+            </div>
+        </div>
+    </template>
 
     <nav id="footerPlaceholder"></nav>
     <!---------------------------------------------->
@@ -60,6 +106,8 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/saved.js"></script>
+    <script src="./scripts/profile.js"></script>
 
 </body>
 

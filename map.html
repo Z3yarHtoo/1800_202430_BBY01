@@ -40,7 +40,7 @@ function initMap() {
     // Get the selected location from localStorage
     let selectedLocation = JSON.parse(localStorage.getItem('selectedLocation'));
 
-    let location = { lat: 49.2827, lng: -123.1207 };
+    let location = { lat: 49.250, lng: -123.003 };
 
     if (selectedLocation) {
         location = selectedLocation;
@@ -60,28 +60,48 @@ function initMap() {
 }
 
         </script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const location = urlParams.get('location');
+
+        const locations = {
+            BCIT: { lat: 49.250, lng: -123.003 }
+        };
+
+        const mapElement = document.getElementById('map');
+        if (location && locations[location]) {
+            const map = new google.maps.Map(mapElement, {
+                center: locations[location],
+                zoom: 15
+            });
+
+            new google.maps.Marker({
+                position: locations[location],
+                map: map,
+                title: "BCIT Burnaby Campus"
+            });
+        } else {
+            mapElement.textContent = 'Location not found';
+        }
+    });
+</script>
+
 
 </head>
 
 <body>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
     <nav id="navbarPlaceholder"></nav>
 
     <div class="container mt-5">
         <h1 class="text-center mb-4">Find Restaurants Near You</h1>
         <div id="map" style="height: 500px; width: 100%;"></div>
     </div>
+    <div id="map" style="width: 100%; height: 400px; background: lightgray;"></div>
 
     <nav id="footerPlaceholder"></nav>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
 
-    <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI_BBY01.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>

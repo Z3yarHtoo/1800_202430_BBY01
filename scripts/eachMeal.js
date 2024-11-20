@@ -16,6 +16,23 @@ function displayMealInfo() {
             document.getElementById("mealName").innerHTML = mealName;
             let imgEvent = document.querySelector(".meal-img");
             imgEvent.src = "../images/" + mealCode + ".jpg";
+            
+            imgEvent.addEventListener('mouseover', () => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = 'See map location';
+                imgEvent.parentElement.style.position = 'relative'; 
+                imgEvent.parentElement.appendChild(tooltip);
+            });
+            imgEvent.addEventListener('mouseout', () => {
+                const tooltip = imgEvent.parentElement.querySelector('.tooltip');
+                if (tooltip) tooltip.remove();
+            });
+                    // Add click functionality
+        imgEvent.addEventListener('click', () => {
+            window.location.href = 'map.html?location=BCIT';
+        });
+    
         });
 }
 displayMealInfo();

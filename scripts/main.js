@@ -97,3 +97,27 @@ function updateBookmark(mealDocID) {
         }
     })
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const foodImages = document.querySelectorAll('.food-image:not(.meal-img)'); // Exclude .meal-img
+    
+    foodImages.forEach(image => {
+        // Hover effect
+        image.addEventListener('mouseover', () => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = 'See map location';
+            image.parentElement.style.position = 'relative'; // Ensure parent has relative positioning
+            image.parentElement.appendChild(tooltip);
+        });
+
+        image.addEventListener('mouseout', () => {
+            const tooltip = image.parentElement.querySelector('.tooltip');
+            if (tooltip) tooltip.remove();
+        });
+
+        // Click functionality
+        image.addEventListener('click', () => {
+            window.location.href = 'map.html?location=BCIT';
+        });
+    });
+});

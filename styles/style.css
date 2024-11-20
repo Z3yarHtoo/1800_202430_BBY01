@@ -99,3 +99,22 @@ body {
   margin: 2%;
   /* Add margin between cards */
 }
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  transform: translate(-50%, -150%);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.food-image,
+.meal-img {
+  position: relative;
+  cursor: pointer;
+}

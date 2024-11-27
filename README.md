@@ -17,8 +17,11 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * Bootstrap 5.0 (Frontend library)
 * Firebase 8.0 (BAAS - Backend as a Service)
 
+* files not specified to be from firebase modified from 1800 demos
+* most JS and HTML code taken from 1800 demos and modified to our needs
+
 ## 4. Complete setup/installion/usage
-To use our site, all you need is our link! [PASTE LINK HERE ONCE THE SITE IS HOSTED]
+To use our site, all you need is our link! https://cuisineconnect-90b0d.web.app/
 
 ## 5. Known Bugs and Limitations
 Here are some known bugs and limitations:
@@ -44,7 +47,8 @@ Content of the project folder:
 ├── homepage.html               # Main page once the user has logged in
 ├── login.html               # HTML page for the user to log in
 ├── map.html               # HTML page that shows meal card location data on a map
-├── profile.html               # gives the user the option to change their information and shows them their saved reviews, if any
+├── profile.html               # gives the user the option to change their information and
+    shows them their saved reviews, if any
 ├── review.html               # page for users to write reviews for meal cards
 ├── thanks.html               # page redirect once a user has finished writing a review
 └── README.md
@@ -58,17 +62,30 @@ It has the following subfolders and files:
     /logo.jpg                  # image taken from template, still just a placeholder image.
 ├── scripts                  # Folder for scripts
     /authentication.js         # JS file that handles user authentication using firebase
-    /eachMeal.js               # JS file that handles meal cards, review fetching from database, 
+    /eachMeal.js               # JS file that handles meal cards, 
+        review fetching from database, 
         and passing the user from eachMeal.html to review.html
-    /main.js                   # gets username from firestore to display on homepage.html, displays
-        meal cards homepage.html, handles users bookmarking reviews, and passes users to map.html 
+    /main.js                   # gets username from firestore to display 
+        on homepage.html, displays
+        meal cards homepage.html, handles users bookmarking reviews, 
+            and passes users to map.html 
         with the corresponding location when an image is clicked on eachMeal.html
     /profile.js                # handles the modification of user data on profile.html
-    /review.js                 # handles all the logic needed to write a review on review.html
-    /saved.js                  # gets the users name from firestore database and gets the user's bookmarks. Both to be displayed on profile.html
-    /script.js                 # holds logout function and leftover code to write more meal cards
+    /review.js                 # handles all the logic needed to write a 
+        review on review.html
+    /saved.js                  # gets the users name from firestore database and gets the
+        user's bookmarks. Both to be displayed on profile.html
+    /script.js                 # holds logout function and leftover code to 
+        write more meal cards
     /skeleton.js               # handles navbar loading funcitonality that limits user 
         access when not signed in
+    /.firebaserc               # connects to firebase project
+    /404.html                  # page not found added by firebase hosting
+    /firebase.json             # json file used when hosting to check read/write access
+        and any other configurations.
+    /firestore.indexes.json    # holds values for files to be searched in database
+    /firestore.rules           # holds current read/write access date rules, where if 
+        outside of date range, users cannot read/write data from/to database
 ├── styles                   # Folder for styles
     /style.css                 # CSS styling to override Bootstrap when necessary
 

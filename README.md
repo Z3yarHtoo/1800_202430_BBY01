@@ -58,13 +58,17 @@ It has the following subfolders and files:
     /logo.jpg                  # image taken from template, still just a placeholder image.
 ├── scripts                  # Folder for scripts
     /authentication.js         # JS file that handles user authentication using firebase
-    /eachMeal.js               # JS file that handles meal cards, review fetching from database, and passing the user from eachMeal.html to review.html
-    /main.js                   # gets username from firestore to display on homepage.html, displays meal cards homepage.html, handles users bookmarking reviews, and passes users to map.html with the corresponding location when an image is clicked on eachMeal.html
+    /eachMeal.js               # JS file that handles meal cards, review fetching from database, 
+        and passing the user from eachMeal.html to review.html
+    /main.js                   # gets username from firestore to display on homepage.html, displays
+        meal cards homepage.html, handles users bookmarking reviews, and passes users to map.html 
+        with the corresponding location when an image is clicked on eachMeal.html
     /profile.js                # handles the modification of user data on profile.html
     /review.js                 # handles all the logic needed to write a review on review.html
     /saved.js                  # gets the users name from firestore database and gets the user's bookmarks. Both to be displayed on profile.html
     /script.js                 # holds logout function and leftover code to write more meal cards
-    /skeleton.js               # handles navbar loading funcitonality that limits user access when not signed in
+    /skeleton.js               # handles navbar loading funcitonality that limits user 
+        access when not signed in
 ├── styles                   # Folder for styles
     /style.css                 # CSS styling to override Bootstrap when necessary
 

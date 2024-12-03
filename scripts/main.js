@@ -2,13 +2,12 @@ function insertNameFromFirestore() {
     // Check if the user is logged in:
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            console.log(user.uid); // Let's know who the logged-in user is by logging their UID
+            console.log(user.uid); // Lets us know who the logged-in user is by logging their UID
             currentUser = db.collection("users").doc(user.uid); // Go to the Firestore document of the user
             currentUser.get().then(userDoc => {
                 // Get the user name
                 let userName = userDoc.data().name;
                 console.log(userName);
-                //$("#name-goes-here").text(userName); // jQuery
                 document.getElementById("name-goes-here").innerText = userName;
             })
         } else {
@@ -42,12 +41,6 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
                 newcard.querySelector('i').onclick = () => updateBookmark(docID);
 
-
-                //Optional: give unique ids to all elements for future use
-                // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
                 currentUser.get().then(userDoc => {
                     //get the user name
                     var bookmarks = userDoc.data().bookmarks;
@@ -59,7 +52,6 @@ function displayCardsDynamically(collection) {
                 //attach to gallery, Example: "meals-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
 
-                //i++;   //Optional: iterate variable to serve as unique ID
             })
         })
 }
@@ -67,10 +59,12 @@ function displayCardsDynamically(collection) {
 displayCardsDynamically("meals");  //input param is the name of the collection
 
 function updateBookmark(mealDocID) {
+    // Gets the current user's bookmarks
     currentUser.get().then(doc => {
         console.log(doc.data().bookmarks);
         currentBookmarks = doc.data().bookmarks;
 
+        // When a bookmark tab is clicked, this function either adds or removes the user's tie to this bookmark in the database
         if (currentBookmarks && currentBookmarks.includes(mealDocID)) {
             console.log(mealDocID);
             currentUser.update({

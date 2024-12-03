@@ -89,7 +89,7 @@ body {
 .card-container {
   max-height: auto;
   /* Adjust the maximum height as needed */
-  /* overflow-y: auto; */
+  overflow-y: auto;
 }
 
 /* Style the individual cards as needed */

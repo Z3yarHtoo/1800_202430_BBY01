@@ -97,9 +97,10 @@ function updateBookmark(mealDocID) {
         }
     })
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     const foodImages = document.querySelectorAll('.food-image:not(.meal-img)'); // Exclude .meal-img
-    
+
     foodImages.forEach(image => {
         // Hover effect
         image.addEventListener('mouseover', () => {

@@ -34,58 +34,59 @@
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVsyyQQFrAn1e-7luQ_NYL2q2CxzmbZpw&callback=initMap" async defer></script>
-        <script>
-function initMap() {
-    // Get the selected location from localStorage
-    let selectedLocation = JSON.parse(localStorage.getItem('selectedLocation'));
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVsyyQQFrAn1e-7luQ_NYL2q2CxzmbZpw&callback=initMap"
+        async defer></script>
+    <script>
+        function initMap() {
+            // Get the selected location from localStorage
+            let selectedLocation = JSON.parse(localStorage.getItem('selectedLocation'));
 
-    let location = { lat: 49.250, lng: -123.003 };
+            let location = { lat: 49.250, lng: -123.003 };
 
-    if (selectedLocation) {
-        location = selectedLocation;
-    }
+            if (selectedLocation) {
+                location = selectedLocation;
+            }
 
-    // Create the map centered on the selected location
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: location
-    });
-
-    // Add a marker at the selected location
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
-
-        </script>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const location = urlParams.get('location');
-
-        const locations = {
-            BCIT: { lat: 49.250, lng: -123.003 }
-        };
-
-        const mapElement = document.getElementById('map');
-        if (location && locations[location]) {
-            const map = new google.maps.Map(mapElement, {
-                center: locations[location],
-                zoom: 15
+            // Create the map centered on the selected location
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: location
             });
 
-            new google.maps.Marker({
-                position: locations[location],
-                map: map,
-                title: "BCIT Burnaby Campus"
+            // Add a marker at the selected location
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
             });
-        } else {
-            mapElement.textContent = 'Location not found';
         }
-    });
-</script>
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const location = urlParams.get('location');
+
+            const locations = {
+                BCIT: { lat: 49.250, lng: -123.003 }
+            };
+
+            const mapElement = document.getElementById('map');
+            if (location && locations[location]) {
+                const map = new google.maps.Map(mapElement, {
+                    center: locations[location],
+                    zoom: 15
+                });
+
+                new google.maps.Marker({
+                    position: locations[location],
+                    map: map,
+                    title: "BCIT Burnaby Campus"
+                });
+            } else {
+                mapElement.textContent = 'Location not found';
+            }
+        });
+    </script>
 
 
 </head>

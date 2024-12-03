@@ -12,7 +12,7 @@
 */
 
 .bg-info {
-  background-color: #9f9f9f !important;
+  background-color: #fd7702 !important;
   /* Light green for secondary backgrounds */
 }
 
@@ -116,5 +116,8 @@ body {
 .food-image,
 .meal-img {
   position: relative;
+  cursor: pointer;
+}
+.material-icons:hover {
   cursor: pointer;
 }
